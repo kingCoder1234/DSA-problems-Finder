@@ -1,0 +1,51 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="form">
+      <form method="POST">
+        {{ form.hidden_tag() }} {{ form.search.label }} {{ form.search() }} {{
+        form.submit() }}
+      </form>
+    </div>
+    <div>
+      {% for result in results %}
+      <a href="{{ result['Question Link'] }}">{{ result['Question Link'] }}</a>
+      <p>Score: {{ result['Score'] }}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DSA Finder</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>DSA Finder</h1>
+    </div>
+
+    <div class="form">
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.search.label }}
+        {{ form.search() }}
+        {{ form.submit() }}
+      </form>
+    </div>
+
+    <div class="results">
+      {% for result in results %}
+      <a href="{{ result['Question Link'] }}">{{ result['Question Link'] }}</a>
+      <p>Score: {{ result['Score'] }}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>
+
+
